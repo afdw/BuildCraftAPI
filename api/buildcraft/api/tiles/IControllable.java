@@ -24,6 +24,6 @@ public interface IControllable {
     void setControlMode(Mode mode);
 
     default boolean acceptsControlMode(Mode mode) {
-        return mode != null;
+        return true;
     }
 }
