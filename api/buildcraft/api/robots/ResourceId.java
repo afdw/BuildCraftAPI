@@ -19,8 +19,9 @@ public abstract class ResourceId {
     public static ResourceId load(NBTTagCompound nbt) {
         try {
             Class<?> cls;
+            // noinspection IfMayBeConditional
             if (nbt.hasKey("class")) {
-                // Migration support for 6.4.x
+                // Migration support for 6.4.x // TODO: remove?
                 cls = RobotManager.getResourceIdByLegacyClassName(nbt.getString("class"));
             } else {
                 cls = RobotManager.getResourceIdByName(nbt.getString("resourceName"));

@@ -106,10 +106,6 @@ public enum CustomPaintHelper {
             return EnumActionResult.FAIL;
         }
         Block b = state.getBlock();
-        if (b.recolorBlock(world, pos, hitSide, paint)) {
-            return EnumActionResult.SUCCESS;
-        } else {
-            return EnumActionResult.FAIL;
-        }
+        return b.recolorBlock(world, pos, hitSide, paint) ? EnumActionResult.SUCCESS : EnumActionResult.FAIL;
     }
 }

@@ -37,7 +37,7 @@ public abstract class AssemblyRecipe implements Comparable<AssemblyRecipe>, IFor
     public abstract Set<IngredientStack> getInputsFor(@Nonnull ItemStack output);
 
     /**
-     * Used to determine how much MJ is required to asemble the given output item
+     * Used to determine how much MJ is required to assemble the given output item
      * @param output The output we want to know the MJ cost for, only ever called using stacks obtained from getOutputs or getOutputPreviews
      */
     public abstract long getRequiredMicroJoulesFor(@Nonnull ItemStack output);

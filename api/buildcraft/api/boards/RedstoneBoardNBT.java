@@ -32,11 +32,7 @@ public abstract class RedstoneBoardNBT<T> {
     }
 
     public int getParameterNumber(NBTTagCompound nbt) {
-        if (!nbt.hasKey("parameters")) {
-            return 0;
-        } else {
-            return nbt.getTagList("parameters", Constants.NBT.TAG_COMPOUND).tagCount();
-        }
+        return !nbt.hasKey("parameters") ? 0 : nbt.getTagList("parameters", Constants.NBT.TAG_COMPOUND).tagCount();
     }
 
     public float nextFloat(int difficulty) {

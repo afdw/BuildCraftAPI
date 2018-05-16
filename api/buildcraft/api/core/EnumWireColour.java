@@ -58,7 +58,7 @@ public enum EnumWireColour {
      * {@link #primaryIdenticalColour}. */
     public final Set<EnumDyeColor> similarBasedColours;
 
-    private EnumWireColour(EnumDyeColor primary, EnumDyeColor... secondary) {
+    EnumWireColour(EnumDyeColor primary, EnumDyeColor... secondary) {
         this.primaryIdenticalColour = primary;
         this.similarBasedColours = EnumSet.of(primary, secondary);
     }

@@ -43,8 +43,7 @@ public abstract class PipePluggable {
     }
 
     public NBTTagCompound writeToNbt() {
-        NBTTagCompound nbt = new NBTTagCompound();
-        return nbt;
+        return new NBTTagCompound();
     }
 
     /** Writes the payload that will be passed into
@@ -68,7 +67,7 @@ public abstract class PipePluggable {
 
     public void onTick() {}
 
-    /** @return A bounding box that will be used for collisions and raytracing. */
+    /** @return A bounding box that will be used for collisions and ray tracing. */
     public abstract AxisAlignedBB getBoundingBox();
 
     /** @return True if the pipe cannot connect outwards (it is blocked), or False if this does not block the pipe. */

@@ -45,11 +45,7 @@ public class StatementParameterItemStack implements IStatementParameter {
 
     public StatementParameterItemStack(NBTTagCompound nbt) {
         ItemStack read = new ItemStack(nbt.getCompoundTag("stack"));
-        if (read.isEmpty()) {
-            stack = EMPTY_STACK;
-        } else {
-            stack = read;
-        }
+        stack = read.isEmpty() ? EMPTY_STACK : read;
     }
 
     @Override

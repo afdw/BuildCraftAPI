@@ -35,7 +35,7 @@ public enum BCModules implements IBuildCraftMod {
         }
         hasChecked = true;
         if (!Loader.instance().hasReachedState(LoaderState.PREINITIALIZATION)) {
-            throw new RuntimeException("You can only use EnumBuidCraftModule.isLoaded from pre-init onwards!");
+            throw new RuntimeException("You can only use EnumBuildCraftModule.isLoaded from pre-init onwards!");
         }
         for (BCModules module : VALUES) {
             module.loaded = Loader.isModLoaded(module.modId);

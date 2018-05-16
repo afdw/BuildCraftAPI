@@ -10,6 +10,4 @@ package buildcraft.api;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import buildcraft.api.FieldsAreNonNullByDefault;
-
 import mcp.MethodsReturnNonnullByDefault;

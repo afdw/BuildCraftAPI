@@ -33,9 +33,7 @@ public abstract class PipeBehaviour implements ICapabilityProvider {
     }
 
     public NBTTagCompound writeToNbt() {
-        NBTTagCompound nbt = new NBTTagCompound();
-
-        return nbt;
+        return new NBTTagCompound();
     }
 
     public void writePayload(PacketBuffer buffer, Side side) {}

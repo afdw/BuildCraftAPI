@@ -61,7 +61,7 @@ public interface IStatementParameter extends IGuiSlot {
         return false;
     }
 
-    public enum DrawType {
+    enum DrawType {
         /** Draws the sprite, as returned by {@link IStatementParameter#getSprite()}. */
         SPRITE_ONLY,
 

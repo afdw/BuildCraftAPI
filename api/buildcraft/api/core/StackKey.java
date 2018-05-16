@@ -80,9 +80,7 @@ public final class StackKey {
             }
         }
         if (fluidStack != null) {
-            if (!fluidStack.isFluidEqual(k.fluidStack) || fluidStack.amount != k.fluidStack.amount) {
-                return false;
-            }
+            return fluidStack.isFluidEqual(k.fluidStack) && fluidStack.amount == k.fluidStack.amount;
         }
         return true;
     }

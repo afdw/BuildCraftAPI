@@ -114,6 +114,7 @@ public class CapabilitiesHelper {
         }
     }
 
+    @SuppressWarnings("unchecked")
     @Nonnull
     private static <T> Capability<T> registerCapInternal(CheckedStorage<T> storage, Callable<T> factory) {
         Class<T> clazz = storage.clazz;

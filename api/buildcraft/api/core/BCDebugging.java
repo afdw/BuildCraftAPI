@@ -60,6 +60,7 @@ public class BCDebugging {
             // Some debugging options are more than just logging, so we will differentiate between them
             DEBUG_STATUS = DebugStatus.LOGGING_ONLY;
         } else {
+            // noinspection IfMayBeConditional
             if (isDev) {
                 DEBUG_STATUS = DebugStatus.ENABLE;
             } else {

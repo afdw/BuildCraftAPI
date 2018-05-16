@@ -90,13 +90,11 @@ public enum EnumColor implements IStringSerializable {
     }
 
     public EnumColor getNext() {
-        EnumColor next = VALUES[(ordinal() + 1) % VALUES.length];
-        return next;
+        return VALUES[(ordinal() + 1) % VALUES.length];
     }
 
     public EnumColor getPrevious() {
-        EnumColor previous = VALUES[(ordinal() + VALUES.length - 1) % VALUES.length];
-        return previous;
+        return VALUES[(ordinal() + VALUES.length - 1) % VALUES.length];
     }
 
     public EnumColor inverse() {

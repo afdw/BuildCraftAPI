@@ -50,20 +50,12 @@ public final class PipeApi {
 
     public static FluidTransferInfo getFluidTransferInfo(PipeDefinition def) {
         FluidTransferInfo info = fluidTransferData.get(def);
-        if (info == null) {
-            return fluidInfoDefault;
-        } else {
-            return info;
-        }
+        return info == null ? fluidInfoDefault : info;
     }
 
     public static PowerTransferInfo getPowerTransferInfo(PipeDefinition def) {
         PowerTransferInfo info = powerTransferData.get(def);
-        if (info == null) {
-            return powerInfoDefault;
-        } else {
-            return info;
-        }
+        return info == null ? powerInfoDefault : info;
     }
 
     public static class FluidTransferInfo {

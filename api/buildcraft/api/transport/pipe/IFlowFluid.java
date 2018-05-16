@@ -14,7 +14,7 @@ import buildcraft.api.core.IFluidHandlerAdv;
 import buildcraft.api.transport.pluggable.PipePluggable;
 
 public interface IFlowFluid {
-    /** @deprecated use the version below with a simulate paramater. */
+    /** @deprecated use the version below with a simulate parameter. */
     @Nullable
     @Deprecated
     default FluidStack tryExtractFluid(int millibuckets, EnumFacing from, FluidStack filter) {
@@ -28,7 +28,7 @@ public interface IFlowFluid {
     @Nullable
     FluidStack tryExtractFluid(int millibuckets, EnumFacing from, FluidStack filter, boolean simulate);
 
-    /** @deprecated use the version below with a simulate paramater. */
+    /** @deprecated use the version below with a simulate parameter. */
     @Deprecated
     default ActionResult<FluidStack> tryExtractFluidAdv(int millibuckets, EnumFacing from, IFluidFilter filter) {
         return tryExtractFluidAdv(millibuckets, from, filter, false);

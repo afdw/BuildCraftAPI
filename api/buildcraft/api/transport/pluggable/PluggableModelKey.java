@@ -26,9 +26,7 @@ public abstract class PluggableModelKey {
         if (obj == null) return false;
         if (getClass() != obj.getClass()) return false;
         PluggableModelKey other = (PluggableModelKey) obj;
-        if (layer != other.layer) return false;
-        if (side != other.side) return false;
-        return true;
+        return layer == other.layer && side == other.side;
     }
 
     @Override

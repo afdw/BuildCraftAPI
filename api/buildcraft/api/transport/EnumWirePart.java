@@ -63,6 +63,7 @@ public enum EnumWirePart {
         return get(bx, by, bz);
     }
 
+    @SuppressWarnings("Duplicates")
     public static EnumWirePart get(boolean x, boolean y, boolean z) {
         if (x) {
             if (y) {

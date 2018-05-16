@@ -10,7 +10,7 @@ public class AreaProviders {
     public static final List<IAreaProviderGetter> providers = new ArrayList<>();
 
     public interface IAreaProviderGetter {
-        /** @return All of the {@link IAreaProvider}'s that contain the specified block psoition. */
+        /** @return All of the {@link IAreaProvider}'s that contain the specified block position. */
         List<IAreaProvider> getAreaProviders(World world, BlockPos at);
     }
 

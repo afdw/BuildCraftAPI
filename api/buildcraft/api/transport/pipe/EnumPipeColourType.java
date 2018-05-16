@@ -4,5 +4,5 @@ public enum EnumPipeColourType {
     TRANSLUCENT,
     BORDER_OUTER,
     BORDER_INNER,
-    CUSTOM;
+    CUSTOM
 }

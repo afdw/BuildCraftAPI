@@ -144,11 +144,7 @@ public class AIRobot {
     }
 
     public final AIRobot getActiveAI() {
-        if (delegateAI != null) {
-            return delegateAI.getActiveAI();
-        } else {
-            return this;
-        }
+        return delegateAI != null ? delegateAI.getActiveAI() : this;
     }
 
     public final AIRobot getDelegateAI() {
@@ -178,12 +174,8 @@ public class AIRobot {
 
             try {
                 Class<?> aiRobotClass;
-                if (sub.hasKey("class")) {
-                    // Migration support for 6.4.x
-                    aiRobotClass = RobotManager.getAIRobotByLegacyClassName(sub.getString("class"));
-                } else {
-                    aiRobotClass = RobotManager.getAIRobotByName(sub.getString("aiName"));
-                }
+                // Migration support for 6.4.x
+                aiRobotClass = sub.hasKey("class") ? RobotManager.getAIRobotByLegacyClassName(sub.getString("class")) : RobotManager.getAIRobotByName(sub.getString("aiName"));
                 if (aiRobotClass != null) {
                     delegateAI = (AIRobot) aiRobotClass.getConstructor(EntityRobotBase.class).newInstance(robot);
                     delegateAI.parentAI = this;
@@ -203,12 +195,8 @@ public class AIRobot {
 
         try {
             Class<?> aiRobotClass;
-            if (nbt.hasKey("class")) {
-                // Migration support for 6.4.x
-                aiRobotClass = RobotManager.getAIRobotByLegacyClassName(nbt.getString("class"));
-            } else {
-                aiRobotClass = RobotManager.getAIRobotByName(nbt.getString("aiName"));
-            }
+            // Migration support for 6.4.x
+            aiRobotClass = nbt.hasKey("class") ? RobotManager.getAIRobotByLegacyClassName(nbt.getString("class")) : RobotManager.getAIRobotByName(nbt.getString("aiName"));
             if (aiRobotClass != null) {
                 ai = (AIRobot) aiRobotClass.getConstructor(EntityRobotBase.class).newInstance(robot);
                 ai.loadFromNBT(nbt);

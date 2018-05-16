@@ -131,11 +131,7 @@ public final class PipeDefinition {
          * 
          * @return this. */
         public PipeDefinitionBuilder texSuffixes(String... suffixes) {
-            if (suffixes == null || suffixes.length == 0) {
-                textureSuffixes = new String[] { "" };
-            } else {
-                textureSuffixes = suffixes;
-            }
+            textureSuffixes = suffixes == null || suffixes.length == 0 ? new String[] {""} : suffixes;
             return this;
         }
 

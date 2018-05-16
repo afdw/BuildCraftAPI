@@ -32,6 +32,7 @@ public class NbtSquishConstants {
     public static final int GZIP_MAGIC = (GZIP_MAGIC_1 << 8) | GZIP_MAGIC_2;
 
     // The flags used by BUILDCRAFT_V1 to check the existence of each dictionary
+    @SuppressWarnings("PointlessBitwiseExpression")
     public static final int FLAG_HAS_BYTES = 1 << 0;
     public static final int FLAG_HAS_SHORTS = 1 << 1;
     public static final int FLAG_HAS_INTS = 1 << 2;

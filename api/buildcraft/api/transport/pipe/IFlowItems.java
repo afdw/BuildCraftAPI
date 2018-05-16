@@ -12,7 +12,7 @@ import buildcraft.api.transport.IInjectable;
 
 public interface IFlowItems extends IInjectable {
 
-    /** @deprecated Use the version below with a simulate paramater. */
+    /** @deprecated Use the version below with a simulate parameter. */
     @Deprecated
     default int tryExtractItems(int count, EnumFacing from, @Nullable EnumDyeColor colour, IStackFilter filter) {
         return tryExtractItems(count, from, colour, filter, false);
