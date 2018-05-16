@@ -3,6 +3,15 @@
  * The BuildCraft API is distributed under the terms of the MIT License. Please check the contents of the license, which
  * should be located as "LICENSE.API" in the BuildCraft source code distribution. */
 @API(apiVersion = "1.1", owner = "BuildCraftAPI|core", provides = "BuildCraftAPI|items")
+@FieldsAreNonNullByDefault
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
 package buildcraft.api.items;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 import net.minecraftforge.fml.common.API;
+
+import buildcraft.api.FieldsAreNonNullByDefault;
+
+import mcp.MethodsReturnNonnullByDefault;

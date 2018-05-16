@@ -23,4 +23,13 @@
  * instance of {@link buildcraft.api.mj.IMjReceiver} then you must return it for both of the capability's
  * {@link buildcraft.api.mj.MjAPI#CAP_CONNECTOR} and {@link buildcraft.api.mj.MjAPI#CAP_RECEIVER}. A simple way to do
  * this is provided in {@link buildcraft.api.mj.MjCapabilityHelper}. */
+@FieldsAreNonNullByDefault
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
 package buildcraft.api.mj;
+
+import javax.annotation.ParametersAreNonnullByDefault;
+
+import buildcraft.api.FieldsAreNonNullByDefault;
+
+import mcp.MethodsReturnNonnullByDefault;
