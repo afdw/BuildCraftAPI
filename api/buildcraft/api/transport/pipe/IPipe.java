@@ -1,5 +1,7 @@
 package buildcraft.api.transport.pipe;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -15,14 +17,17 @@ public interface IPipe extends ICapabilityProvider {
 
     PipeFlow getFlow();
 
+    @Nullable
     EnumDyeColor getColour();
 
-    void setColour(EnumDyeColor colour);
+    void setColour(@Nullable EnumDyeColor colour);
 
     void markForUpdate();
 
+    @Nullable
     TileEntity getConnectedTile(EnumFacing side);
 
+    @Nullable
     IPipe getConnectedPipe(EnumFacing side);
 
     boolean isConnected(EnumFacing side);
