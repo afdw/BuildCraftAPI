@@ -4,6 +4,8 @@
  * should be located as "LICENSE.API" in the BuildCraft source code distribution. */
 package buildcraft.api.statements;
 
+import javax.annotation.Nullable;
+
 /** Designates some sort of statement. Most of the time you should implement {@link ITriggerExternal},
  * {@link ITriggerInternal}, {@link IActionExternal} or {@link IActionInternal} though. */
 public interface IStatement extends IGuiSlot {
@@ -15,6 +17,7 @@ public interface IStatement extends IGuiSlot {
     int minParameters();
 
     /** Create parameters for the statement. */
+    @Nullable
     IStatementParameter createParameter(int index);
 
     /** Creates a parameter for the given index, optionally returning the old param if it is still valid. By default
@@ -25,7 +28,8 @@ public interface IStatement extends IGuiSlot {
      * @param old
      * @param index
      * @return */
-    default IStatementParameter createParameter(IStatementParameter old, int index) {
+    @Nullable
+    default IStatementParameter createParameter(@Nullable IStatementParameter old, int index) {
         IStatementParameter _new = createParameter(index);
         if (old == null || _new == null) {
             return _new;
