@@ -53,7 +53,8 @@ public abstract class PipeEventItem extends PipeEvent {
          * {@link #attempting} */
         public int accepted;
 
-        public TryInsert(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, EnumFacing from, @Nonnull ItemStack attempting) {
+        public TryInsert(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, EnumFacing from,
+            @Nonnull ItemStack attempting) {
             super(true, holder, flow);
             this.colour = colour;
             this.from = from;
@@ -97,7 +98,8 @@ public abstract class PipeEventItem extends PipeEvent {
     public static class OnInsert extends ReachDest {
         public final EnumFacing from;
 
-        public OnInsert(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, @Nonnull ItemStack stack, EnumFacing from) {
+        public OnInsert(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, @Nonnull ItemStack stack,
+            EnumFacing from) {
             super(holder, flow, colour, stack);
             this.from = from;
         }
@@ -107,7 +109,8 @@ public abstract class PipeEventItem extends PipeEvent {
     public static class ReachCenter extends ReachDest {
         public final EnumFacing from;
 
-        public ReachCenter(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, @Nonnull ItemStack stack, EnumFacing from) {
+        public ReachCenter(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, @Nonnull ItemStack stack,
+            EnumFacing from) {
             super(holder, flow, colour, stack);
             this.from = from;
         }
@@ -117,7 +120,8 @@ public abstract class PipeEventItem extends PipeEvent {
     public static class ReachEnd extends ReachDest {
         public final EnumFacing to;
 
-        public ReachEnd(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, @Nonnull ItemStack stack, EnumFacing to) {
+        public ReachEnd(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, @Nonnull ItemStack stack,
+            EnumFacing to) {
             super(holder, flow, colour, stack);
             this.to = to;
         }
@@ -199,7 +203,8 @@ public abstract class PipeEventItem extends PipeEvent {
         private final int[] priority = new int[6];
         private final EnumSet<EnumFacing> allowed = EnumSet.allOf(EnumFacing.class);
 
-        public SideCheck(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, EnumFacing from, @Nonnull ItemStack stack) {
+        public SideCheck(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, EnumFacing from,
+            @Nonnull ItemStack stack) {
             super(holder, flow);
             this.colour = colour;
             this.from = from;
@@ -258,11 +263,11 @@ public abstract class PipeEventItem extends PipeEvent {
                     return ImmutableList.of(allowed);
                 default:
             }
-            outer_loop: while (true) {
+            priority_search: {
                 int val = priority[0];
                 for (int i = 1; i < priority.length; i++) {
                     if (priority[i] != val) {
-                        break outer_loop;
+                        break priority_search;
                     }
                 }
                 // No need to work out the order when all destinations have the same priority
@@ -304,7 +309,8 @@ public abstract class PipeEventItem extends PipeEvent {
         public final ItemStack stack;
         public boolean canBounce = false;
 
-        public TryBounce(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, EnumFacing from, @Nonnull ItemStack stack) {
+        public TryBounce(IPipeHolder holder, IFlowItems flow, EnumDyeColor colour, EnumFacing from,
+            @Nonnull ItemStack stack) {
             super(holder, flow);
             this.colour = colour;
             this.from = from;
@@ -388,7 +394,8 @@ public abstract class PipeEventItem extends PipeEvent {
     public static class FindDest extends OrderedEvent {
         public final ImmutableList<ItemEntry> items;
 
-        public FindDest(IPipeHolder holder, IFlowItems flow, List<EnumSet<EnumFacing>> orderedDestinations, ImmutableList<ItemEntry> items) {
+        public FindDest(IPipeHolder holder, IFlowItems flow, List<EnumSet<EnumFacing>> orderedDestinations,
+            ImmutableList<ItemEntry> items) {
             super(holder, flow, orderedDestinations);
             this.items = items;
         }
