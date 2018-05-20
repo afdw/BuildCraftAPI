@@ -1,7 +1,8 @@
-/** Copyright (c) 2011-2015, SpaceToad and the BuildCraft Team http://www.mod-buildcraft.com
+/* Copyright (c) 2011-2018, SpaceToad and the BuildCraft Team http://www.mod-buildcraft.com
  *
  * The BuildCraft API is distributed under the terms of the MIT License. Please check the contents of the license, which
  * should be located as "LICENSE.API" in the BuildCraft source code distribution. */
+
 package buildcraft.api.core;
 
 import java.util.Random;
@@ -13,7 +14,9 @@ import net.minecraft.util.math.Vec3d;
 public interface IZone {
     /** Returns the smallest possible distance that the pos would have to be changed by in order for
      * {@link #contains(Vec3d)} to return true. If the position is already inside then this will return 0 */
-    double distanceTo(BlockPos pos);
+    default double distanceTo(BlockPos pos) {
+        return Math.sqrt(distanceToSquared(pos));
+    }
 
     /** Returns {@link #distanceTo(BlockPos)} but squared. Usually this will be quicker to calculate. */
     double distanceToSquared(BlockPos pos);
